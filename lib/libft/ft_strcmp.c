@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/10 21:21:41 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/16 17:13:21 by akenji-a         ###   ########.fr       */
+/*   Created: 2022/08/16 17:02:26 by akenji-a          #+#    #+#             */
+/*   Updated: 2022/08/16 17:02:34 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../include/push_swap.h"
+#include "libft.h"
 
-int		main(int argc, char *argv[])
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	t_stack	*stacks;
+	size_t i;
 
-	stacks = malloc(sizeof(t_stack));
-	if (argc > 1)
-	{
-		if (args_parse(++argv, stacks))
-			ft_printf("Bom garoto\n");
-		else
-			ft_printf("Mau garoto\n");
-	}
-	print_stacks(stacks);
-	ft_printf("Depois do swap\n");
-	operation("sa", stacks);
-	print_stacks(stacks);
-	return (0);
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'))
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

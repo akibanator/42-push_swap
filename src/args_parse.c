@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:55:47 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/12 17:55:19 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:34:17 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ static int	has_duplicate(t_stack *stacks)
 	{
 		while (current_node_y != NULL)
 		{
-			ft_printf("X: %d Y: %d\n", current_node_x->num, current_node_y->num);
 			if (current_node_x->num == current_node_y->num)
-				ft_printf("É igual carai X: %d Y: %d\n", current_node_x->num, current_node_y->num);
+				return (1);
 			current_node_y = current_node_y->next;
 		}
 		current_node_x = current_node_x->next;

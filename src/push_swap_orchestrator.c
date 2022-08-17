@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_orchestrator.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/10 21:21:41 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/16 17:13:21 by akenji-a         ###   ########.fr       */
+/*   Created: 2022/08/16 16:58:23 by akenji-a          #+#    #+#             */
+/*   Updated: 2022/08/16 17:11:44 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../include/push_swap.h"
 
-int		main(int argc, char *argv[])
+void	operation(char	*op, t_stack *stacks)
 {
-	t_stack	*stacks;
-
-	stacks = malloc(sizeof(t_stack));
-	if (argc > 1)
-	{
-		if (args_parse(++argv, stacks))
-			ft_printf("Bom garoto\n");
-		else
-			ft_printf("Mau garoto\n");
-	}
-	print_stacks(stacks);
-	ft_printf("Depois do swap\n");
-	operation("sa", stacks);
-	print_stacks(stacks);
-	return (0);
+	if (ft_strcmp(op, "sa") == 0)
+		swap_a(stacks);
 }

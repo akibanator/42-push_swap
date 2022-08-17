@@ -6,7 +6,7 @@
 #    By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/28 11:59:00 by akenji-a          #+#    #+#              #
-#    Updated: 2022/08/11 18:23:18 by akenji-a         ###   ########.fr        #
+#    Updated: 2022/08/16 17:03:24 by akenji-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ C_SOURCE=		ft_atoi.c\
 				ft_tolower.c\
 				ft_toupper.c\
 				ft_uuitoa.c\
-				ft_atol.c
+				ft_atol.c\
+				ft_strcmp.c
 
 OBJS=			$(C_SOURCE:.c=.o)
 

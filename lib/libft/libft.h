@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 11:41:50 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/11 18:22:47 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/08/16 17:03:00 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_uuitoa(unsigned long long int num, char *base);
 long	ft_atol(const char *nptr);
+int		ft_strcmp(const char *s1, const char *s2);
 #endif
