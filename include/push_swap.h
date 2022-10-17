@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:22:25 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/16 17:11:58 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/17 19:45:56 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	swap_a(t_stack *stacks);
 void	swap_b(t_stack *stacks);
 void	swap_ab(t_stack *stacks);
 void	operation(char	*op, t_stack *stacks);
+int		push_b(t_stack *stacks);
 
 #endif

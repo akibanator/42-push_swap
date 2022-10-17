@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:47:25 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/16 17:10:10 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/17 19:51:24 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ t_node	*swap(t_node	*node)
 {
 	t_node	*temp_node;
 
-	temp_node = node;
-	node = node->next;
-	temp_node->prev = node;
-	temp_node->next = node->next;
-	node->prev = NULL;
-	temp_node->next->prev = temp_node;
-	node->next = temp_node;
+	if (node->next != NULL)
+	{
+		temp_node = node;
+		node = node->next;
+		temp_node->prev = node;
+		temp_node->next = node->next;
+		node->prev = NULL;
+		node->next = temp_node;
+	}
 	return (node);
 }
 

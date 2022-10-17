@@ -6,16 +6,30 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:47:17 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/08/16 17:49:26 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/17 19:51:05 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_node	*push(t_node *node_1, t_node *node_2)
-{
+#include	"../include/push_swap.h"
 
-}
-
-void	push_b(t_stack *stacks)
+int		push_b(t_stack *stacks)
 {
-	stacks->head_stack_b = push(stacks->head_stack_a, stacks->head_stack_b);
+	t_node	*node_tmp;
+
+	node_tmp = stacks->head_stack_a->next;
+	if (stacks->head_stack_b == NULL)
+	{
+		stacks->head_stack_b = stacks->head_stack_a;
+		stacks->head_stack_b->next = NULL;
+		stacks->head_stack_b->prev = NULL;
+	}
+	else
+	{
+		stacks->head_stack_a->next = stacks->head_stack_b;
+		stacks->head_stack_b->prev = stacks->head_stack_a;
+		stacks->head_stack_b = stacks->head_stack_a;
+		stacks->current_stack_a->prev = NULL;
+	}
+	stacks->head_stack_a = node_tmp;
+	stacks->head_stack_a->prev = NULL;
 }
