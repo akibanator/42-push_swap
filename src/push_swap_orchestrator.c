@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 16:58:23 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/17 19:54:30 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:28:53 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	operation(char	*op, t_stack *stacks)
 		swap_b(stacks);
 	if (ft_strcmp(op, "ss") == 0)
 		swap_ab(stacks);
+	if (ft_strcmp(op, "pa") == 0)
+		push_a(stacks);
 	if (ft_strcmp(op, "pb") == 0)
 		push_b(stacks);
 }
