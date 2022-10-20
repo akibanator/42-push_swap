@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:47:25 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/17 19:51:24 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:53:56 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,24 @@ t_node	*swap(t_node	*node)
 	return (node);
 }
 
-void		swap_a(t_stack *stacks)
+int		swap_a(t_stack *stacks)
 {
+	if (stacks->head_stack_a == NULL)
+		return (1);
 	stacks->head_stack_a = swap(stacks->head_stack_a);
 }
 
-void		swap_b(t_stack *stacks)
+int		swap_b(t_stack *stacks)
 {
+	if (stacks->head_stack_b == NULL)
+		return (1);
 	stacks->head_stack_b = swap(stacks->head_stack_b);
 }
 
-void		swap_ab(t_stack *stacks)
+int		swap_ab(t_stack *stacks)
 {
+	if (stacks->head_stack_a == NULL || stacks->head_stack_b == NULL)
+		return (1);
 	swap_a(stacks);
 	swap_b(stacks);
 }
