@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:47:17 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/20 12:10:58 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:24:45 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		push_b(t_stack *stacks)
 		stacks->head_stack_b = stacks->head_stack_a;
 		stacks->head_stack_b->next = NULL;
 		stacks->head_stack_b->prev = NULL;
+		stacks->current_stack_b = stacks->head_stack_b;
 	}
 	else
 	{

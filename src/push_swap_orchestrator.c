@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 16:58:23 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/20 11:28:53 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:14:26 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,10 @@ void	operation(char	*op, t_stack *stacks)
 		push_a(stacks);
 	if (ft_strcmp(op, "pb") == 0)
 		push_b(stacks);
+	if (ft_strcmp(op, "ra") == 0)
+		rotate_a(stacks);
+	if (ft_strcmp(op, "rb") == 0)
+		rotate_b(stacks);
+	if (ft_strcmp(op, "rr") == 0)
+		rotate_ab(stacks);
 }
