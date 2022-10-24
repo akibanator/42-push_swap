@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:22:25 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/17 19:45:56 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:43:10 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,17 @@ int		args_parse(char **argv, t_stack *stacks);
 int		build_stack_a(int	num, t_stack *stacks);
 void	print_stacks(t_stack *stacks);
 t_node	*swap(t_node *node);
-void	swap_a(t_stack *stacks);
-void	swap_b(t_stack *stacks);
-void	swap_ab(t_stack *stacks);
+int		swap_a(t_stack *stacks);
+int		swap_b(t_stack *stacks);
+int		swap_ab(t_stack *stacks);
 void	operation(char	*op, t_stack *stacks);
 int		push_b(t_stack *stacks);
+int		push_a(t_stack *stacks);
+int		rotate_a(t_stack *stacks);
+int		rotate_b(t_stack *stacks);
+int		rotate_ab(t_stack *stacks);
+int		reverse_rotate_a(t_stack *stacks);
+int		reverse_rotate_b(t_stack *stacks);
+int		reverse_rotate_ab(t_stack *stacks);
 
 #endif
