@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:21:41 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/24 16:08:28 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:21:11 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,24 @@ int		main(int argc, char *argv[])
 		{
 			ft_printf("Fez\n");
 			print_stacks(stacks);
-			operation("pb", stacks);
+			ft_printf("Depois do rotate\n");
+			rotate_a(stacks);
+			rotate_a(stacks);
+			rotate_a(stacks);
+			rotate_a(stacks);
+			rotate_a(stacks);
+			rotate_b(stacks);
+			print_stacks(stacks);
 			ft_printf("Depois do push\n");
+			push_a(stacks);
+			push_b(stacks);
+			push_b(stacks);
+			print_stacks(stacks);
+			rotate_b(stacks);
+			rotate_b(stacks);
+			rotate_b(stacks);
+			rotate_b(stacks);
+			ft_printf("Depois do rotate\n");
 			print_stacks(stacks);
 		}
 		else
