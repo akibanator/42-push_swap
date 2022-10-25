@@ -6,13 +6,13 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:21:41 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/24 19:44:32 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/25 03:04:43 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../include/push_swap.h"
 
-int		main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack	*stacks;
 

@@ -6,13 +6,13 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:47:17 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/24 15:24:45 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/25 03:52:52 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../include/push_swap.h"
 
-int		push_b(t_stack *stacks)
+int	push_b(t_stack *stacks)
 {
 	t_node	*node_tmp;
 
@@ -34,11 +34,12 @@ int		push_b(t_stack *stacks)
 	}
 	stacks->head_stack_a = node_tmp;
 	if (stacks->head_stack_a == NULL)
-		return (0);
+		return (1);
 	stacks->head_stack_a->prev = NULL;
+	return (0);
 }
 
-int		push_a(t_stack *stacks)
+int	push_a(t_stack *stacks)
 {
 	t_node	*node_tmp;
 
@@ -60,6 +61,7 @@ int		push_a(t_stack *stacks)
 	}
 	stacks->head_stack_b = node_tmp;
 	if (stacks->head_stack_b == NULL)
-		return (0);
+		return (1);
 	stacks->head_stack_b->prev = NULL;
+	return (0);
 }
