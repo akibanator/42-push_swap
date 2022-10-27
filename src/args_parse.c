@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:55:47 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/27 11:58:38 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/27 12:28:14 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 static int	is_not_valid_number(char *argv)
 {
-	while (*argv)
+	int	i;
+
+	i = 0;
+	while (argv[i])
 	{
-		if (*argv == '-')
-			*(argv++);
-		else if (ft_isdigit(*argv))
-			*(argv++);
+		if (argv[i] == '-')
+			i++;
+		else if (ft_isdigit(argv[i]))
+			i++;
 		else
 			return (1);
 	}
@@ -66,13 +69,16 @@ static int	has_duplicate(t_stack *stacks)
 
 int	args_parse(char **argv, t_stack *stacks)
 {
-	while (*argv)
+	int	i;
+
+	i = 0;
+	while (argv[i])
 	{
-		if (is_not_valid_number(*argv))
+		if (is_not_valid_number(argv[i]))
 			return (0);
-		if (is_not_integer(*argv, stacks))
+		if (is_not_integer(argv[i], stacks))
 			return (0);
-		*argv++;
+		i++;
 	}
 	if (has_duplicate(stacks))
 		return (0);

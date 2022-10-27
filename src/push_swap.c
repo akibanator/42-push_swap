@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:21:41 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/25 03:04:43 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/27 12:28:59 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,6 @@ int	main(int argc, char *argv[])
 		if (args_parse(++argv, stacks))
 		{
 			ft_printf("Fez\n");
-			push_b(stacks);
-			push_b(stacks);
-			print_stacks(stacks);
-			ft_printf("Depois do rotate\n");
-			rotate_ab(stacks);
-			print_stacks(stacks);
-			reverse_rotate_ab(stacks);
-			ft_printf("Depois do rev rotate\n");
 			print_stacks(stacks);
 		}
 		else
