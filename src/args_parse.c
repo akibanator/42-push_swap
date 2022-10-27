@@ -6,7 +6,7 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:55:47 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/25 03:55:06 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:58:38 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	has_duplicate(t_stack *stacks)
 	t_node	*current_node_y;
 
 	if (stacks->head_stack_a->next == NULL)
-		return (1);
+		return (0);
 	current_node_x = stacks->head_stack_a;
 	current_node_y = stacks->head_stack_a->next;
 	while (current_node_x != NULL)
@@ -57,7 +57,7 @@ static int	has_duplicate(t_stack *stacks)
 		}
 		current_node_x = current_node_x->next;
 		if (current_node_x->next == NULL)
-			return (1);
+			return (0);
 		else
 			current_node_y = current_node_x->next;
 	}
