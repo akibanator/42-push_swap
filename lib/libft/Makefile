@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/28 11:59:00 by akenji-a          #+#    #+#              #
-#    Updated: 2022/08/16 17:03:24 by akenji-a         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME=		libft.a
 
 CC=				gcc
@@ -22,8 +10,6 @@ LIB1=			ar -rcs
 LIB2=			ranlib
 
 RM=				/bin/rm -f
-
-H_SOURCE=		libft.h
 
 C_SOURCE=		ft_atoi.c\
 				ft_bzero.c\
@@ -66,18 +52,20 @@ C_SOURCE=		ft_atoi.c\
 OBJS=			$(C_SOURCE:.c=.o)
 
 all:			$(NAME)
+				@echo "LIBFT has been compiled"
 
-$(NAME):	$(OBJS) $(H_SOURCE)
-				$(LIB1) $(NAME) $(OBJS)
-				$(LIB2) $(NAME)
+$(NAME):		$(OBJS)
+				@$(LIB1) $(NAME) $(OBJS)
+				@$(LIB2) $(NAME)
 
-.c.o:			$(CC) $(CC_FLAGS) -I$(H_SOURCE) -c $< -o $(<:.c=.o)
+%.o:			%.c
+				@$(CC) $(CC_FLAGS) -c $< -o $@
 
 clean:
-				$(RM) $(OBJS)
+				@$(RM) $(OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean all
 

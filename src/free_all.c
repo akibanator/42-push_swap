@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 15:54:55 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/11/21 12:04:43 by akenji-a         ###   ########.fr       */
+/*   Created: 2022/11/19 19:47:07 by akenji-a          #+#    #+#             */
+/*   Updated: 2022/11/21 18:11:15 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../include/push_swap.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	free_node(t_node *node, size_t len)
 {
-	size_t	i;
+	t_node	*node_temp;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	if ((size_t)dst - (size_t)src < len)
+	while (len != 0)
 	{
-		i = len - 1;
-		while (i < len)
+		if (len == 1)
+			free(node);
+		else
 		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i--;
+			node_temp = node->next;
+			free(node);
+			node = node_temp;
 		}
+		len--;
 	}
-	else
-	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
+}
+
+int	free_all(t_stack *stacks)
+{
+	free_node(stacks->head_stack_a, stacks->len_a);
+	free_node(stacks->head_stack_b, stacks->len_b);
+	free(stacks);
+	return (0);
 }

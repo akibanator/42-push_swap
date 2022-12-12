@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/10 21:21:41 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/10/27 12:28:59 by akenji-a         ###   ########.fr       */
+/*   Created: 2022/11/13 18:27:00 by akenji-a          #+#    #+#             */
+/*   Updated: 2022/12/12 11:03:31 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,23 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*stacks;
 
-	stacks = malloc(sizeof(t_stack));
 	if (argc > 1)
 	{
-		if (args_parse(++argv, stacks))
+		if (!is_valid_number(argc, argv) || !is_integer(argc, argv))
 		{
-			ft_printf("Fez\n");
-			print_stacks(stacks);
+			ft_printf("Error\n");
+			return (1);
 		}
-		else
-			ft_printf("Nao fez\n");
+		stacks = malloc(sizeof(t_stack));
+		stacks->len_a = 0;
+		stacks->len_b = 0;
+		build_stacks(argc, argv, stacks);
+		put_position(argc, argv, stacks);
+		if (has_duplicate(stacks) && stacks->len_a > 1)
+			ft_printf("Error\n");
+		if (!has_duplicate(stacks) && stacks->len_a > 1)
+			sort((argc - 1), stacks);
+		free_all(stacks);
 	}
 	return (0);
 }

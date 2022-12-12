@@ -6,7 +6,7 @@
 #    By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 16:47:02 by akenji-a          #+#    #+#              #
-#    Updated: 2022/06/29 17:04:33 by akenji-a         ###   ########.fr        #
+#    Updated: 2022/11/21 11:46:14 by akenji-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ AR=				ar rcs
 LIBFT=			../libft/libft.a
 
 all:			$(NAME)
+				@echo "FT_PRINTF has been compiled"
 
-$(NAME):		libft.a $(SRC:.c=.o)
+$(NAME):		libft.a
 				@$(CC) $(CC_FLAGS) -c $(SRC)
 				@$(AR) $(NAME) $(SRC:.c=.o)
 
@@ -30,10 +31,10 @@ libft.a:
 
 clean:
 				@make clean -C ../libft
-				$(RM) $(SRC:.c=.o)
+				@$(RM) $(SRC:.c=.o)
 
 fclean:			clean
-				$(RM) $(LIBFT) $(NAME)
+				@$(RM) $(LIBFT) $(NAME)
 
 re: 			fclean all
 

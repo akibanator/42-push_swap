@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 15:54:55 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/11/21 12:04:43 by akenji-a         ###   ########.fr       */
+/*   Created: 2022/12/03 17:46:39 by akenji-a          #+#    #+#             */
+/*   Updated: 2022/12/07 12:15:14 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"../include/push_swap.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	sort_three_c1(t_stack *stacks)
 {
-	size_t	i;
+	swap_a(stacks);
+	reverse_rotate_a(stacks);
+}
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	if ((size_t)dst - (size_t)src < len)
-	{
-		i = len - 1;
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
-	}
-	else
-	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
+void	sort_three_c2(t_stack *stacks)
+{
+	swap_a(stacks);
+	rotate_a(stacks);
 }

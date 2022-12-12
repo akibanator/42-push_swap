@@ -6,13 +6,13 @@
 /*   By: akenji-a <akenji-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:34:50 by akenji-a          #+#    #+#             */
-/*   Updated: 2022/05/16 12:41:30 by akenji-a         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:31:36 by akenji-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-int	ft_lennumm(unsigned long long int num, int len_base)
+int	ft_lennumm(unsigned long long int num, unsigned long long int len_base)
 {
 	unsigned int	len;
 
